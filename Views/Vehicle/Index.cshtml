@@ -1,0 +1,22 @@
+﻿
+@{
+    ViewBag.Title = "Index";
+}
+
+<h1 class="vehicle-header">NAŠI BOLIDI</h1>
+<hr />
+<div class="row vehicles-view-container">
+    @foreach (var vozilo in Model)
+    {
+        <a href="/Request/New/@vozilo.Id" class="">
+            <div class="col-md-6 col-sm-12 vehicle-container">
+                <h1 class="single-vehicle-title">@vozilo.Manufacturer @vozilo.Model</h1>
+                <h4 class="single-vehicle-details"><span class="single-vehicle-description">BOJA: </span> @vozilo.Color</h4>
+                <h4 class="single-vehicle-details"><span class="single-vehicle-description">GODIŠTE: </span> @vozilo.YearOfProduction</h4>
+                <h4 class="single-vehicle-details"><span class="single-vehicle-description">BROJ MJESTA: </span> @vozilo.NrOfSeats</h4>
+                <h4 class="single-vehicle-details"><span class="single-vehicle-description">CIJENA ZA DAN: </span> @vozilo.PricePerDay $</h4>
+            </div>
+        </a>
+    }
+</div>
+

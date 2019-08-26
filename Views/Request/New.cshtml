@@ -1,0 +1,56 @@
+﻿@model LMXRentACar.ViewModels.FormRequestModel
+@{
+    ViewBag.Title = "New";
+}
+
+<div class="row">
+    <h2 class="new-request-heading">VAŠE VOZILO:</h2>
+    <div class="col-md-6 col-sm-12">
+        <h4 class="request-vihicle-details"><span class="request-vihicle-description">PROIZVOĐAČ: </span>@Model.vehicle.Manufacturer</h4>
+        <h4 class="request-vihicle-details"><span class="request-vihicle-description">MODEL: </span>@Model.vehicle.Model</h4>
+        <h4 class="request-vihicle-details"><span class="request-vihicle-description">GODIŠTE: </span>@Model.vehicle.YearOfProduction</h4>
+    </div>
+    <div class="col-md-6 col-sm-12">
+        <h4 class="request-vihicle-details"><span class="request-vihicle-description">BOJA: </span>@Model.vehicle.Color</h4>
+        <h4 class="request-vihicle-details"><span class="request-vihicle-description">BR. SJEDIŠTA: </span>@Model.vehicle.NrOfSeats</h4>
+        <h4 class="request-vihicle-details"><span class="request-vihicle-description">CIJENA ZA DAN: </span>@Model.vehicle.PricePerDay $</h4>
+    </div>
+</div>
+
+<hr />
+
+@using (Html.BeginForm("Create", "Request"))
+{
+    <div class="form-group">
+        @Html.LabelFor(m => m.request.Email)
+        @Html.TextBoxFor(m => m.request.Email, new { @class = "form-control" })
+        @Html.ValidationMessageFor(m => m.request.Email)
+    </div>
+
+    <div class="form-group">
+        @Html.LabelFor(m => m.request.Name)
+        @Html.TextBoxFor(m => m.request.Name, new { @class = "form-control" })
+        @Html.ValidationMessageFor(m => m.request.Name)
+    </div>
+
+    <div class="form-group">
+        @Html.LabelFor(m => m.request.Surname)
+        @Html.TextBoxFor(m => m.request.Surname, new { @class = "form-control" })
+        @Html.ValidationMessageFor(m => m.request.Surname)
+    </div>
+    <div class="form-group">
+        @Html.LabelFor(m => m.request.StartDate)
+        @Html.TextBoxFor(m => m.request.StartDate, new { @type = "date", @class = "form-control" })
+        @Html.ValidationMessageFor(m => m.request.StartDate)
+    </div>
+    <div class="form-group">
+        @Html.LabelFor(m => m.request.EndDate)
+        @Html.TextBoxFor(m => m.request.EndDate, new { @type = "date", @class = "form-control" })
+        @Html.ValidationMessageFor(m => m.request.EndDate)
+    </div>
+    @Html.HiddenFor(m => m.request.IsValid)
+    @Html.HiddenFor(m => m.request.VehicleId)
+    <button type="submit" class="btn btn-primary">Pošalji zahtjev</button>
+
+}
+

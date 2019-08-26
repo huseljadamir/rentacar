@@ -1,0 +1,33 @@
+﻿
+@{
+    ViewBag.Title = "Delete";
+}
+
+<hr />
+<h4>VOZILO: @Model.vehicle.Manufacturer @Model.vehicle.Model</h4>
+<h4>BOJA: @Model.vehicle.Color BR. SJEDIŠTA: @Model.vehicle.NrOfSeats</h4>
+<h4>GODIŠTE: @Model.vehicle.YearOfProduction CIJENA ZA DAN: @Model.vehicle.PricePerDay</h4>
+<hr />
+<h4>PODNOSIOC ZAHTIJEVA: @Model.request.Name @Model.request.Surname</h4>
+<h4>KONTAKT: @Model.request.Email</h4>
+<h4>OD @Model.request.StartDate.ToString("dd/MM/yyyy") DO: @Model.request.EndDate.ToString("dd/MM/yyyy")</h4>
+<h4>Želite li odobriti ovaj zahtjev?</h4>
+<h3>
+    <a class="make-decision-link action-confirm" href="/Admin/ConfirmRequest/@Model.request.Id">DA</></a> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+    <a class="make-decision-link action-deny" href="/Admin/Index">NE</a>
+</h3>
+<hr />
+@if (Model.otherRequests == null)
+{
+<h3>Ovo je jedini zahtvijev za ovo vozilo</h3>
+}
+
+else 
+    { 
+    <h3>Ostali neodobreni zahtijevi za ovo vozilo:</h3>
+    foreach (var req in Model.otherRequests)
+    {
+    <h5>@req.Name @req.Surname,  od: @req.StartDate.ToString("dd/MM/yyyy") do: @req.EndDate.ToString("dd/MM/yyyy")</h5>
+    <hr />
+    }
+}

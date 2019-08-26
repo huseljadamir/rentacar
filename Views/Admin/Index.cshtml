@@ -1,0 +1,23 @@
+﻿
+@{
+    ViewBag.Title = "Index";
+}
+
+<h2>ZAHTJEVI KOJI ČEKAJU NA ODOBRENJE:</h2>
+
+<div class="row">
+    <hr />
+    @foreach(var r in @Model)
+    {
+    <div class="col-xs-12 col-md-6">
+        <h5>VOZILO: @r.vehicle.Manufacturer - @r.vehicle.Model</h5>
+        <h5>KUPAC:  @r.request.Name @r.request.Surname, @r.request.Email</h5>
+        <h5>POČETNI/ZAVRŠNI TERMIN: @r.request.StartDate.ToString("dd/MM/yyyy") - @r.request.EndDate.ToString("dd/MM/yyyy")</h5>
+        <h4><a class="make-decision-link action-confirm" href="/Admin/Confirm/@r.request.Id">Odobri </a> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<a class="make-decision-link action-deny" href="/Admin/Delete/@r.request.Id"> Izbriši</a></h4>
+        <h4></h4>
+        <hr />
+    </div>
+    }
+
+</div>
+

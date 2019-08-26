@@ -1,0 +1,202 @@
+﻿body {
+    padding-top: 50px;
+    padding-bottom: 20px;
+    overflow-x: hidden;
+}
+
+a:link {
+    text-decoration: none;
+    color: white;
+}
+
+a:visited {
+    text-decoration: none;
+    color: white;
+}
+
+a:hover {
+    text-decoration: none;
+    color: white;
+    cursor: pointer;
+}
+
+/* Set padding to keep content from hitting the edges */
+.body-content {
+    padding-left: 15px;
+    padding-right: 15px;
+}
+
+/* Override the default bootstrap behavior where horizontal description lists 
+   will truncate terms that are too long to fit in the left column 
+*/
+.dl-horizontal dt {
+    white-space: normal;
+}
+
+/* Set width on the form input elements since they're 100% wide by default */
+input,
+select,
+textarea {
+    max-width: 280px;
+}
+
+.field-validation-error {
+    color: red;
+}
+
+.front-page-banner {
+    width: 100%;
+    height: 90vh;
+    height: 90vh;
+    background-image: url('../Resources/BANNER.jpg');
+    background-size: 100% 100%;
+    padding-top: 25vh;
+    position: relative;
+}
+ .front-page-banner h1 {
+    text-align: center;
+    color: white;
+    letter-spacing: 10px;
+    line-height: 1;
+    font-size: 53px;
+    font-weight: bolder;
+    width: 100%;
+    position: absolute;
+   
+}
+
+ .front-page-banner a {
+    color: white;
+    width: 100%;
+    text-align: center;
+    position: absolute;
+    bottom: 15px;
+    left: 0;
+    width: 100%;
+    letter-spacing: 5px;
+    font-weight: bold;
+    font-size: 18px;
+}
+
+.vehicle-header {
+    margin: 15px auto;
+    text-align: center;
+    font-weight: lighter;
+    letter-spacing: 12px;
+}
+.vehicle-container {
+    transition: 0.25s;
+}
+
+    .vehicle-container:hover {
+        transform: scale(1.05);
+        transition: 0.25s;
+        background-color: #e6e6ff;
+    }
+
+.single-vehicle-title {
+    text-align: center;
+    margin-bottom: 20px;
+    font-weight: lighter;
+    letter-spacing: 3px;
+}
+
+.single-vehicle-details {
+    text-align: left;
+    margin-left: 30px;
+    letter-spacing: 3px;
+}
+
+.single-vehicle-description {
+    font-weight: bold;
+}
+
+.request-vihicle-details {
+    margin-left: 25px;
+    letter-spacing: 4px;
+}
+
+.new-request-heading {
+    font-weight: bolder;
+    text-align: center;
+    margin: 40px 0 40px 0;
+}
+
+.request-vihicle-description {
+    font-weight: bold;
+}
+
+.admin-username-label {
+    text-align: left;
+    margin-top: 15px;
+    margin-left: 15px;
+}
+
+.make-decision-link {
+    color: darkslateblue;
+    transition: 0.25s;
+}
+
+.make-decision-link:visited {
+    color: darkslateblue;
+    transition: 0.25s;
+}
+
+.make-decision-link:hover {
+    color: darkslateblue;
+    transform: scale(1.3);
+    transition: 0.25s;
+}
+
+.make-decision-link:link {
+    color: darkslateblue;
+    transition: 0.25s;
+}
+
+.action-confirm:hover {
+    color: darkgreen;
+}
+
+.action-deny:hover {
+    color: darkred;
+}
+
+.warning-msg{
+    color: darkred;
+}
+.shader-banner {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: black;
+    opacity: 0.5;
+}
+.banner-title {
+    opacity: 0;
+    transform: scale(1.5);
+    animation: title-in 0.8s;
+    animation-delay: 0.7s;
+    animation-fill-mode: forwards;
+}
+
+@keyframes title-in {
+    from {
+        opacity: 0;
+        transform: scale(1.5);
+    }
+    to {
+        opacity: 1;
+        transform: scale(1);
+    }
+}
+
+.banner-link {
+    opacity: 0;
+    transform: scale(1.5);
+    animation: title-in 0.8s;
+    animation-delay: 1.3s;
+    animation-fill-mode: forwards;
+    transition: 0.25s;
+}
